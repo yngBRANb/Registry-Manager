@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+    <h1 class="text-center mb-5">Реестр ошибок</h1>
+    <div class="row">
+
+{% for error in errors %}
+
+        <div class="col-4">
+            <div class="card bg-dark border-secondary h-100">
+                <div class="card-header">
+                    <h4>{{ error.name }}</h4>
+                </div>
+                <div class="card-body h-100">
+                    <h5>id: {{ error.id }}</h5>
+                    <p class="h-50">{{ error.description|slice:":100" }}</p>
+                    <a href="{% url 'error' error.id %}" class="btn btn-outline-primary">Подробнее</a>
+                    <small class="text-secondary">Обнаружена:{{ created.date }}</small>
+                </div>
+            </div>
+        </div>
+
+{% endfor %}
+
+    </div>
+
+
+{% else %}
+
+    <div class="text-center">
+        <h1>Вы не вошли в аккаунт</h1>
+        <a class="btn btn-outline-primary mt-5 pr-5 pl-5 pt-3 pb-3" href="{% url 'login' %}"> <span class="h3">Войти</span> </a>
+    </div>
+
+{% endif %}
+
+
+{% endblock %}

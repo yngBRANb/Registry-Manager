@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>{{ errors.name }}</h1>
+<div class="row border-bottom pb-4">
+    <div class="col-md-8">
+
+        <img src="{{ errors.photo.url }}" width="700" height="400" alt="">
+
+          {% if errors.status == 'Red' %}
+            <p class="mt-4 bg-danger w-50 p-2 text-center rounded">Классификация: Красная</p>
+          {% elif errors.status == 'Green' %}
+            <p class="mt-4 bg-success w-50 p-2 text-center rounded">Классификация: Зеленая</p>
+          {% elif errors.status == 'Yellow' %}
+          <p class="mt-4 bg-warning w-50 p-2 text-center text-dark rounded">Классификация: Желтая</p>
+          {% else %}
+          <p class="mt-4 bg-secondary w-50 p-2 text-center rounded">Классификация: Не определенна</p>
+          {% endif %}
+
+    </div>
+
+    <div class="col-4">
+        <h2>ID: {{ errors.id }}</h2>
+        <small class="text-secondary">Описание  ошибки:</small>
+        <p class="w-100">{{ errors.description|slice:":800" }}</p>
+    </div>
+
+</div>
+
+<h1 class="mt-3 mb-3">Решение проблемы:</h1>
+
+<div class="row border-bottom pb-3">
+    <div class="col-12">
+        <p>{{ errors.solving }}</p>
+    </div>
+</div>
+
+<h2 class="mt-4">Обсуждение:</h2>
+
+ПОКА НЕ РАБОТАЕТ, допилю как время будет, не очень критичная штука, учитывая наше комьюнити
+
+<div class="row">
+
+
+            <div class="col-md-8 col-lg-6">
+              <div class="card bg-dark shadow-0 border">
+                <div class="card-body p-4">
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <form action="" class="form-inline" method="POST">
+                        {% csrf_token %}
+                        <textarea rows="1" type="text" id="addANote" class="form-control text-light bg-dark border-right-0 border-left-0 border-top-0 border-bottom-1 w-75" placeholder="Напишите комментарий"></textarea>
+                        <input type="submit" class="w-25 btn btn-success" value="Поделиться">
+                    </form>
+                  </div>
+
+                  <div class="card bg-dark mb-4">
+                    <div class="card-body">
+                      <p>Коммент текст</p>
+          
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                          <p class="small mb-0 ms-2">Martha | 24.02.2021 | 12:12</p>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+        
+                </div>
+              </div>
+            </div>
+          </div>
+
+{% endblock %}

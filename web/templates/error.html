@@ -5,9 +5,9 @@
 
 <h1>{{ errors.name }}</h1>
 <div class="row border-bottom pb-4">
-    <div class="col-md-8">
+    <div class="col-md-12 col-sm-12 col-lg-8 col-xl-8">
 
-        <img src="{{ errors.photo.url }}" width="700" height="400" alt="">
+        <img class="w-100" src="{{ errors.photo.url }}" width="700" height="400" alt="">
 
           {% if errors.status == 'Red' %}
             <p class="mt-4 bg-danger w-50 p-2 text-center rounded">Классификация: Красная</p>
@@ -21,7 +21,7 @@
 
     </div>
 
-    <div class="col-4">
+    <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
         <h2>ID: {{ errors.id }}</h2>
         <small class="text-secondary">Описание  ошибки:</small>
         <p class="w-100">{{ errors.description|slice:":800" }}</p>
@@ -43,33 +43,6 @@
 
 <div class="row">
 
-
-            <div class="col-md-8 col-lg-6">
-              <div class="card bg-dark shadow-0 border">
-                <div class="card-body p-4">
-                  <div data-mdb-input-init class="form-outline mb-4">
-                    <form action="" class="form-inline" method="POST">
-                        {% csrf_token %}
-                        <textarea rows="1" type="text" id="addANote" class="form-control text-light bg-dark border-right-0 border-left-0 border-top-0 border-bottom-1 w-75" placeholder="Напишите комментарий"></textarea>
-                        <input type="submit" class="w-25 btn btn-success" value="Поделиться">
-                    </form>
-                  </div>
-
-                  <div class="card bg-dark mb-4">
-                    <div class="card-body">
-                      <p>Коммент текст</p>
-          
-                      <div class="d-flex justify-content-between">
-                        <div class="d-flex flex-row align-items-center">
-                          <p class="small mb-0 ms-2">Martha | 24.02.2021 | 12:12</p>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-        
-                </div>
-              </div>
             </div>
           </div>
 

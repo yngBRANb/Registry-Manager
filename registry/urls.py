@@ -10,7 +10,8 @@ urlpatterns = [
     path('', index, name='index'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('errorpage/<int:id>', errorPage, name='error'),
-    path('search/', search, name="search")
+    path('search/', search, name="search"),
+    path('category/<int:id>', category_page, name='category'),
 ]
 
 urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

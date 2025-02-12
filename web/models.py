@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 CLASSIFICATION = (
     ('Red', 'Красная'),
@@ -6,6 +7,12 @@ CLASSIFICATION = (
     ('Green', 'Зелёная'),
     ('no', 'no'),
 )
+
+class Category(models.Model):
+    name = models.CharField(verbose_name="Категории", max_length=50)
+
+    def __str__ (self):
+        return self.name
 
 class Error(models.Model):
     name = models.CharField(verbose_name="Название ошибки", max_length=50)
@@ -15,7 +22,7 @@ class Error(models.Model):
     last_modified = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=CLASSIFICATION, default='no')
     photo = models.ImageField(null=True ,upload_to='errors/%Y-%m-%d/')
-    
+    category = models.ForeignKey(Category , on_delete=models.CASCADE, verbose_name="Категория")
+
     def __str__(self):
         return self.name
-    

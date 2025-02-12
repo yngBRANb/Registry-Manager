@@ -43,16 +43,29 @@
             {% endif %}
             {% if user.is_superuser %}
                 <li class="nav-item">
-                  <a class="nav-link" href="admin/web/error/add/">Добавить ошибку</a>
+                  <a class="nav-link" href="{% url 'admin:index' %}">Добавить ошибку</a>
                 </li>
             {% endif %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Категории
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% for category in categories %}
+                <a class="dropdown-item" href="/category/{{category.id}}">{{ category.name }}</a>
+                {% endfor %}
+              </div>
+            </li>
           </ul>
           <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get">
-            <select class="mr-1 form-control" name="select" id="searh_select">
+            <!--
+            <select class="mr-1 form-control mr-sm-2 mb-1" name="select" id="searh_select">
               <option value="default">Выбирите тип поиска:</option>
               <option value="id">По id</option>
               <option value="name">По имени</option>
             </select>
+            -->
+
             <input name="search" class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
           </form>

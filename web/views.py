@@ -19,14 +19,12 @@ def errorPage(request, id):
 @login_required
 def search(request):
     request.method=="GET"
-    select = request.GET['select']
-    searchq = request.GET['search']
-    
-    if select == "id":
-        errors = Error.objects.filter(id__contains=request.GET['search'])
-    elif select == "name":
-        errors=Error.objects.filter(name__contains=searchq)
-    else:
-        errors=Error.objects.filter(name__contains=searchq)
+    errors = Error.objects.filter(name__contains=request.GET['search'])
         
     return render(request, 'search.html', { "errors" : errors })
+
+@login_required
+def category_page(request, id):
+    category = Error.objects.filter(category=id)
+    
+    return render(request, 'category.html', { "category" : category })

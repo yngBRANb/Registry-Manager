@@ -3,12 +3,10 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
+<h1 class="text-center mb-5 pb-3 border-bottom">Ошибки</h1>
+<div class="row">
 
-    <h1 class="text-center mb-5 pb-3 border-bottom">Реестр ошибок</h1>
-    <div class="row">
-
-{% for error in errors %}
+{% for error in category %}
 
         <div class=" col-sm-12 col-lg-4 col-md-12 col-xl-4 p-1">
             <div class="card bg-dark border-secondary h-100">
@@ -22,23 +20,16 @@
                 <div class="d-flex flex-column card-footer">
                     <a href="{% url 'error' error.id %}" class="btn btn-outline-primary">Подробнее</a>
                     <small class="text-secondary ml-3">Обнаружена:{{ error.created_date }}</small>
+                    <small class="text-secondary ml-3">Категория:{{ error.category }}</small>
                 </div>
             </div>
         </div>
 
 {% endfor %}
 
-    </div>
 
+{{errors.name}}
 
-{% else %}
-
-    <div class="text-center">
-        <h1>Вы не вошли в аккаунт</h1>
-        <a class="btn btn-outline-primary mt-5 pr-5 pl-5 pt-3 pb-3" href="{% url 'login' %}"> <span class="h3">Войти</span> </a>
-    </div>
-
-{% endif %}
-
+</div>
 
 {% endblock %}

@@ -11,7 +11,7 @@ build-job:
 test-job:
   stage: test
   script:
-    - docker run --rm register-manager pytest -s -v
+    - docker run --rm register-manager -s -v
 
 deploy-job:
   stage: deploy

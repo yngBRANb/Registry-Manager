@@ -27,9 +27,10 @@ THUMBNAIL_ALIASES = {
 SECRET_KEY = 'django-insecure-xvyrdp5_@=7jue9hi$9@^=-8=&93=you(ici6tm!ngyzp)0+so'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['registry.kalovik.ru']
+CSRF_TRUSTED_ORIGINS = ['https://registry.kalovik.ru', 'https://registry.kalovik.ru']
 
 # typically, os.path.join(os.path.dirname(__file__), 'media')
 MEDIA_ROOT = BASE_DIR / 'media'

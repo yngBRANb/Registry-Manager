@@ -10,5 +10,5 @@ build-job:
 deploy-job:
   stage: deploy
   script:
-    - docker rm register-manager
+    - docker rm registry-manager
     - docker run -p 8553:8080 -d --name registry-manager --restart=always register-manager 

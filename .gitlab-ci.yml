@@ -10,4 +10,4 @@ build-job:
 deploy-job:
   stage: deploy
   script:
-    - docker run -p 8553:8080 --rm -d register-manager pytest -s -v
+    - docker run -p 8553:8080 -d --name registry-manager --restart=always register-manager 

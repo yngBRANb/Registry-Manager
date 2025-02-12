@@ -27,7 +27,7 @@ THUMBNAIL_ALIASES = {
 SECRET_KEY = 'django-insecure-xvyrdp5_@=7jue9hi$9@^=-8=&93=you(ici6tm!ngyzp)0+so'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['registry.kalovik.ru']
 CSRF_TRUSTED_ORIGINS = ['https://registry.kalovik.ru', 'https://registry.kalovik.ru']

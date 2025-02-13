@@ -4,3 +4,6 @@ services:
         image: register-manager
         ports:
             - 8553:8080
+        volumes:
+            - media:var/registry-manager/media
+            - db.sqlite3:var/registry-manager/db

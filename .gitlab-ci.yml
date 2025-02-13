@@ -1,6 +1,7 @@
 stages:
   - build
   - deploy
+  - notify
 
 build-job:
   stage: build
@@ -10,6 +11,13 @@ build-job:
 deploy-job:
   stage: deploy
   script:
-    - docker stop registry-manager
-    - docker rm registry-manager
-    - docker run -p 8553:8080 -d --name registry-manager --restart=always register-manager 
+    - docker-compose up -d
+    - apk add curl
+    - sh ci-notify.sh ✅
+
+notify_error:
+  stage: notify
+  script:
+  - apk add curl
+  - sh ci-notify.sh ❌
+  when: on_failure

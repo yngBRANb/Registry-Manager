@@ -7,27 +7,27 @@
 <div class="row border-bottom pb-4">
     <div class="col-md-12 col-sm-12 col-lg-8 col-xl-8">
 
-        <img class="w-100 rounded border" src="{{ errors.photo.url }}" width="700" height="400" alt="">
+        <img class="w-100" src="{{ errors.photo.url }}" width="700" height="400" alt="">
 
         <div class="d-flex">
           {% if errors.status == 'Red' %}
-            <p class="m-4 bg-danger w-50 p-2 text-center rounded">Классификация ошибки: Красная</p>
+            <p class="m-4 bg-danger w-50 p-2 text-center rounded">Классификация: Красная</p>
           {% elif errors.status == 'Green' %}
-            <p class="m-4 bg-success w-50 p-2 text-center rounded">Классификация ошибки: Зеленая</p>
+            <p class="mt-4 bg-success w-50 p-2 text-center rounded">Классификация: Зеленая</p>
           {% elif errors.status == 'Yellow' %}
-          <p class="m-4 bg-warning w-50 p-2 text-center text-dark rounded">Классификация ошибки: Желтая</p>
+          <p class="mt-4 bg-warning w-50 p-2 text-center text-dark rounded">Классификация: Желтая</p>
           {% else %}
-          <p class="m-4 bg-secondary w-50 p-2 text-center rounded">Классификация ошибки: Не определенна</p>
+          <p class="mt-4 bg-secondary w-50 p-2 text-center rounded">Классификация: Не определенна</p>
           {% endif %}
 
-          {% if errors.decision == 'Red' %}
-            <p class="m-4 bg-danger w-50 p-2 text-center rounded">Сложность решения: Тяжело</p>
-          {% elif errors.decision == 'Green' %}
-            <p class="m-4 bg-success w-50 p-2 text-center rounded">Сложность решения: Легко</p>
-          {% elif errors.decision == 'Yellow' %}
-            <p class="m-4 bg-warning w-50 p-2 text-center text-dark rounded">Сложность решения: Среднее</p>
+          {% if errors.status == 'Red' %}
+            <p class="m-4 bg-danger w-50 p-2 text-center rounded">Решение ошибки: Тяжело</p>
+          {% elif errors.status == 'Green' %}
+            <p class="mt-4 bg-success w-50 p-2 text-center rounded">Решение ошибки: Легко</p>
+          {% elif errors.status == 'Yellow' %}
+            <p class="mt-4 bg-warning w-50 p-2 text-center text-dark rounded">Решение ошибки: Среднее</p>
           {% else %}
-            <p class="m-4 bg-secondary w-50 p-2 text-center rounded">Сложность решения: Не определенна</p>
+            <p class="mt-4 bg-secondary w-50 p-2 text-center rounded">Решение ошибки: Не определенна</p>
           {% endif %}
 
         </div>
@@ -49,31 +49,13 @@
     </div>
 </div>
 
-<h2 class="mt-4 mb-4">Обсуждение:</h2>
+<h2 class="mt-4">Обсуждение:</h2>
+
+ПОКА НЕ РАБОТАЕТ, допилю как время будет, не очень критичная штука, учитывая наше комьюнити
+
 <div class="row">
 
-  <div class="col-12">
-
-    <div class="comment-form">
-      <form action="" class="form-group">
-        <textarea class="form-control" name="commentary" id="commentary" placeholder="Напишите комментарий"></textarea>
-        <button type="submit" class="btn btn-primary mt-3">Отправить</button>
-      </form>
-    </div>
-
-    <div class="comments">
-
-      <div class="card bg-dark">
-        <div class="card-body">
-          <h5 class="card-title">Андрюша Прокофьев</h5>
-          <p class="card-text">Я за гойду!!</p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
+            </div>
+          </div>
 
 {% endblock %}

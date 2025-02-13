@@ -14,12 +14,20 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+    <!-- CUSTOM FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
     <title>Реестр ошибок</title>
   </head>
-  <body class="bg-dark text-light">
+  <body class="bg-grey text-light d-flex flex-column min-vh-100">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-        <a class="navbar-brand" href="{% url 'index' %}">Реестр</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top">
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <img src="{% static 'img/android-chrome-192x192.png' %}" width="30" height="30">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,9 +45,9 @@
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Категории</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
               {% for category in categories %}
-                <a class="dropdown-item" href="/category/{{category.id}}">{{ category.name }}</a>
+                <a class="dropdown-item text-light" href="/category/{{category.id}}">{{ category.name }}</a>
               {% endfor %}
             </div>
           </li>
@@ -67,12 +75,58 @@
         </div>
       </nav>
 
+  <main class="flex-fill">
     <div class="container mt-4">
 
     {% block content %}
     {% endblock %}
 
     </div>
+  </main>
+
+    <footer class="bg-black text-light text-center text-md-left mt-5">
+      <div class="container">
+        <div class="row pt-4">
+          <div class="col-sm-6 col-md-3 pb-4">
+            <h4 class="mb-4">
+              Сервисы
+            </h4>
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://wikijs.black-sprut.pro" class="text-light">Википедия</a>
+              </li>
+              <li>
+                <a href="https://git.kalovik.ru" class="text-light">Приватный GitLab</a>
+              </li>
+            </ul>
+          </div>
+         
+          <div class="col-md-6 pb-4">
+            <h4 class="mb-4">
+              Ну тестовый кал всякий
+            </h4>
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://www.phpcrudgenerator.com/tutorials/how-to-create-a-bootstrap-crud-admin-dashboard" class="text-light">How to create a Bootstrap Admin Dashboard in PHP</a>
+              </li>
+              <li>
+                <a href="https://www.phpformbuilder.pro/drag-n-drop-form-builder/index.html" class="text-light">Drag &amp; drop form builder</a>
+              </li>
+              <li>
+                <a href="https://www.tinymce-bootstrap-plugin.com/" class="text-light">Bootstrap plugin for TinyMce</a>
+              </li>
+            </ul>
+          </div>
+        </div> 
+        <div class="row">
+          <div class="col-12">
+            <p class="text-center text-secondary border-top border-secondary py-4">
+              &copy; 2025 <a href="#" class="text-light">CyberLab</a>
+            </p>
+          </div>
+        </div>   
+      </div>
+    </footer>
 
   </body>
  <!-- Bootstrap JS -->

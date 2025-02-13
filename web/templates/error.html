@@ -9,8 +9,9 @@
 
         <img class="w-100" src="{{ errors.photo.url }}" width="700" height="400" alt="">
 
+        <div class="d-flex">
           {% if errors.status == 'Red' %}
-            <p class="mt-4 bg-danger w-50 p-2 text-center rounded">Классификация: Красная</p>
+            <p class="m-4 bg-danger w-50 p-2 text-center rounded">Классификация: Красная</p>
           {% elif errors.status == 'Green' %}
             <p class="mt-4 bg-success w-50 p-2 text-center rounded">Классификация: Зеленая</p>
           {% elif errors.status == 'Yellow' %}
@@ -19,6 +20,17 @@
           <p class="mt-4 bg-secondary w-50 p-2 text-center rounded">Классификация: Не определенна</p>
           {% endif %}
 
+          {% if errors.status == 'Red' %}
+            <p class="m-4 bg-danger w-50 p-2 text-center rounded">Решение ошибки: Тяжело</p>
+          {% elif errors.status == 'Green' %}
+            <p class="mt-4 bg-success w-50 p-2 text-center rounded">Решение ошибки: Легко</p>
+          {% elif errors.status == 'Yellow' %}
+            <p class="mt-4 bg-warning w-50 p-2 text-center text-dark rounded">Решение ошибки: Среднее</p>
+          {% else %}
+            <p class="mt-4 bg-secondary w-50 p-2 text-center rounded">Решение ошибки: Не определенна</p>
+          {% endif %}
+
+        </div>
     </div>
 
     <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">

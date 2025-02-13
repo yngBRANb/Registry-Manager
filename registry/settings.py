@@ -29,8 +29,8 @@ SECRET_KEY = 'django-insecure-xvyrdp5_@=7jue9hi$9@^=-8=&93=you(ici6tm!ngyzp)0+so
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['registry.kalovik.ru']
-CSRF_TRUSTED_ORIGINS = ['https://registry.kalovik.ru', 'https://registry.kalovik.ru']
+ALLOWED_HOSTS = ['registry.kalovik.ru','localhost','127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://registry.kalovik.ru', 'https://registry.kalovik.ru', 'https://localhost','http://localhost', 'https://127.0.0.1' ,'http://127.0.0.1']
 
 # typically, os.path.join(os.path.dirname(__file__), 'media')
 MEDIA_ROOT = BASE_DIR / 'media'

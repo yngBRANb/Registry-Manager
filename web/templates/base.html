@@ -29,46 +29,41 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'index' %}">Главная</a>
             </li>
-            {% if user.is_authenticated %}
-                <li class="nav-item">
-                  <form method="post" action="{% url 'logout' %}">
-                    {% csrf_token %}
-                    <button class="nav-link border-0 bg-black" type="submit">Выйти</button>
-                </form>
-                </li>
-            {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Войти</a>
-                </li>
-            {% endif %}
-            {% if user.is_superuser %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'admin:index' %}">Добавить ошибку</a>
-                </li>
-            {% endif %}
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Категории
               </a>
+            {% if user.is_superuser %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'admin:index' %}">Добавить ошибку</a>
+              </li>
+            {% endif %}
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% for category in categories %}
                 <a class="dropdown-item" href="/category/{{category.id}}">{{ category.name }}</a>
-                {% endfor %}
+            {% endfor %}
               </div>
             </li>
           </ul>
+          
           <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get">
-            <!--
-            <select class="mr-1 form-control mr-sm-2 mb-1" name="select" id="searh_select">
-              <option value="default">Выбирите тип поиска:</option>
-              <option value="id">По id</option>
-              <option value="name">По имени</option>
-            </select>
-            -->
-
             <input name="search" class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
           </form>
+          <ul class="navbar-nav ml-2">
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+              <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button class="nav-link border-0 bg-black" type="submit">Выйти</button>
+            </form>
+            </li>
+          {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Войти</a>
+            </li>
+        {% endif %}
+          </ul>
         </div>
       </nav>
 

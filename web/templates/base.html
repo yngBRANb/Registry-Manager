@@ -10,6 +10,7 @@
     
     <!-- FAVICONS -->
     <link rel="icon" type="image/png" sizes="192x192" href="{% static 'img/android-chrome-192x192.png' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -35,11 +36,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'index' %}">Главная</a>
+              <a class="nav-link" href="{% url 'index' %}"> <i class="fa fa-home" aria-hidden="true"></i> Главная</a>
             </li>
             {% if user.is_superuser %}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'admin:index' %}">Добавить ошибку</a>
+                <a class="nav-link" href="{% url 'admin:index' %}"><i class="fa fa-download" aria-hidden="true"></i> Добавить ошибку</a>
               </li>
             {% endif %}
 
@@ -47,7 +48,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Категории</a>
             <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
               {% for category in categories %}
-                <a class="dropdown-item text-light" href="/category/{{category.id}}">{{ category.name }}</a>
+                <a class="dropdown-item text-light" href="/category/{{category.id}}"> <i class="fa fa-address-book" aria-hidden="true"></i> {{ category.name }}</a>
               {% endfor %}
             </div>
           </li>
@@ -56,19 +57,19 @@
           
           <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get">
             <input name="search" class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> <i class="fa fa-search" aria-hidden="true"></i> Поиск</button>
           </form>
           <ul class="navbar-nav ml-2">
           {% if user.is_authenticated %}
             <li class="nav-item">
               <form method="post" action="{% url 'logout' %}">
                 {% csrf_token %}
-                <button class="nav-link border-0 bg-black" type="submit">Выйти</button>
+                <button class="nav-link border-0 bg-black" type="submit"> <i class="fa fa-sign-out" aria-hidden="true"></i> Выйти</button>
             </form>
             </li>
           {% else %}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Войти</a>
+                <a class="nav-link" href="{% url 'login' %}"> <i class="fa fa-sign-in" aria-hidden="true"></i> Войти</a>
             </li>
         {% endif %}
           </ul>
@@ -93,10 +94,10 @@
             </h4>
             <ul class="list-unstyled">
               <li>
-                <a href="https://wikijs.black-sprut.pro" class="text-light">Википедия</a>
+                <a href="https://wikijs.black-sprut.pro" class="text-light"> <i class="fa fa-wikipedia-w" aria-hidden="true"></i> Википедия</a>
               </li>
               <li>
-                <a href="https://git.kalovik.ru" class="text-light">Приватный GitLab</a>
+                <a href="https://git.kalovik.ru" class="text-light"> <i class="fa fa-gitlab" aria-hidden="true"></i> Приватный GitLab</a>
               </li>
             </ul>
           </div>

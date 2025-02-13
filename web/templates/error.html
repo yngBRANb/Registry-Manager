@@ -9,7 +9,7 @@
 
         <img class="w-100 rounded border" src="{{ errors.photo.url }}" width="700" height="400" alt="">
 
-        <div class="d-flex">
+        <div class="d-flex align-items-center">
           {% if errors.status == 'Red' %}
             <p class="m-4 bg-danger w-50 p-2 text-center rounded">Классификация ошибки: Красная</p>
           {% elif errors.status == 'Green' %}
@@ -21,13 +21,13 @@
           {% endif %}
 
           {% if errors.decision == 'Red' %}
-            <p class="m-4 bg-danger w-50 p-2 text-center rounded">Сложность решения: Тяжело</p>
+            <p class="m-4 bg-danger w-50 p-2 text-center rounded">Сложность: Тяжело</p>
           {% elif errors.decision == 'Green' %}
-            <p class="m-4 bg-success w-50 p-2 text-center rounded">Сложность решения: Легко</p>
+            <p class="m-4 bg-success w-50 p-2 text-center rounded">Сложность: Легко</p>
           {% elif errors.decision == 'Yellow' %}
-            <p class="m-4 bg-warning w-50 p-2 text-center text-dark rounded">Сложность решения: Среднее</p>
+            <p class="m-4 bg-warning w-50 p-2 text-center text-dark rounded">Сложность: Среднее</p>
           {% else %}
-            <p class="m-4 bg-secondary w-50 p-2 text-center rounded">Сложность решения: Не определенна</p>
+            <p class="m-4 bg-secondary w-50 p-2 text-center rounded">Сложность: Не определенна</p>
           {% endif %}
 
         </div>

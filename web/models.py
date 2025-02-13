@@ -22,7 +22,7 @@ class Category(models.Model):
         return self.name
 
 class Error(models.Model):
-    name = models.CharField(verbose_name="Название ошибки", max_length=50)
+    name = models.CharField(verbose_name="Название ошибки", max_length=50,)
     description = models.TextField(verbose_name="Описание ошибки")
     solving = models.TextField(verbose_name="Решение ошибки")
     created_date = models.DateTimeField(auto_now_add=True)

@@ -6,5 +6,5 @@ services:
         ports:
             - 8553:8080
         volumes:
-            - /home/registry/media/:./media/
-            - /home/registry/db/:app/db.sqlite3
+            - /home/registry/media/:/app/media/
+            - /home/registry/db/:/app/db.sqlite3

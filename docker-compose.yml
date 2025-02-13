@@ -2,8 +2,9 @@ version: '3'
 services:
     web:
         image: register-manager
+        restart: always
         ports:
             - 8553:8080
         volumes:
-            - /app/media:/var/registry-manager/media
-            - /app/db.sqlite3:/var/registry-manager/db
+            - ./media:/var/opt/registry-manager/media
+            - ./db.sqlite3:/var/opt/registry-manager/db

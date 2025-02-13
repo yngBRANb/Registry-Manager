@@ -1,6 +1,6 @@
-version: "3"
-service:
+version: '3'
+services:
     web:
         image: register-manager
         ports:
-            - 8555:8080
+            - 8553:8080

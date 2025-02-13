@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     "cms",
     "menus",
     "treebeard",
+    'web.apps',
 ]
 
 MIDDLEWARE = [

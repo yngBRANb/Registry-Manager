@@ -27,9 +27,9 @@ class Error(models.Model):
     solving = models.TextField(verbose_name="Решение ошибки")
     created_date = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
-    status = models.CharField(max_length=10, choices=CLASSIFICATION, default='no')
-    decision = models.CharField(max_length=30, choices=DECISION, default='no')
-    photo = models.ImageField(null=True ,upload_to='errors/%Y-%m-%d/')
+    status = models.CharField(max_length=10, choices=CLASSIFICATION, default='no', verbose_name="Статус ошибки")
+    decision = models.CharField(max_length=30, choices=DECISION, default='no', verbose_name="Сложность решения")
+    photo = models.ImageField(null=True ,upload_to='errors/%Y-%m-%d/', verbose_name="Фото ошибки")
     category = models.ForeignKey(Category , on_delete=models.CASCADE, verbose_name="Категория")
 
     def __str__(self):

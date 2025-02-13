@@ -2,3 +2,4 @@ Django
 django-cms
 pillow
 whitenoise
+markdown

@@ -5,5 +5,5 @@ services:
         ports:
             - 8553:8080
         volumes:
-            - ./media:/var/registry-manager/media
-            - ./db.sqlite3:/var/registry-manager/db
+            - app/media:/var/registry-manager/media
+            - app/db.sqlite3:/var/registry-manager/db

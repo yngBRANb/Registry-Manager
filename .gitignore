@@ -4,3 +4,4 @@ registry/settings.py
 .gitlab-ci.yml
 Dockerfile
 docker-compose.yml
+ci-notify.sh

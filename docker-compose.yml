@@ -3,4 +3,4 @@ service:
     web:
         image: register-manager
         ports:
-            8555:8080
+            - 8555:8080

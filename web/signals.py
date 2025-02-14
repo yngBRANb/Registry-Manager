@@ -30,11 +30,12 @@ def send_telegram_message(chat_id, text):
 def notify_new_error(sender, instance, created, **kwargs):
     if created:
         try:
-            logger.info(f"☑️ Создана новая ошибка: {instance.id}")
-            message = f"*Новая ошибка добавлена:*\n\n" \
-                     f"*Название:* {instance.name}\n" \
-                     f"*Описание:* {instance.description[:100]}...\n" \
-                     f"*Категория:* {instance.category}"
+            logger.info(f"📝 Создана новая ошибка: {instance.id}")
+            message = f"🚨 *Новая ошибка добавлена!*\n\n" \
+                     f"📌 *Название:* {instance.name}\n" \
+                     f"📝 *Описание:* {instance.description[:100]}...\n" \
+                     f"🏷️ *Категория:* {instance.category}\n\n" \
+                     f"🔍 Подробнее: {settings.SITE_URL}/error/{instance.id}"
             
             logger.info(f"Сформировано сообщение: {message}")
             

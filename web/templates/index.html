@@ -13,15 +13,15 @@
         <div class=" col-sm-12 col-lg-4 col-md-12 col-xl-4 p-1">
             <div class="card bg-dark border-secondary h-100">
                 <div class="card-header">
-                    <h4>{{ error.name }}</h4>
+                    <h4> <i class="fa fa-dot-circle-o" aria-hidden="true"></i> {{ error.name }}</h4>
                 </div>
                 <div class="card-body">
-                    <h5>id: {{ error.id }}</h5>
                     <p class="">{{ error.description|markdown|slice:":100" }}</p>
+                    <small>id: {{ error.id }}</small>
                 </div>
                 <div class="d-flex flex-column card-footer">
                     <a href="{% url 'error' error.id %}" class="btn btn-outline-primary">Подробнее</a>
-                    <small class="text-secondary ml-3">Обнаружена:{{ error.created_date }}</small>
+                    <small class="text-secondary ml-3">Обнаружена: {{ error.created_date }}</small>
                 </div>
             </div>
         </div>

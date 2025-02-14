@@ -18,6 +18,10 @@ DECISION = (
 class Category(models.Model):
     name = models.CharField(verbose_name="Категории", max_length=50)
 
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
+
     def __str__ (self):
         return self.name
 
@@ -31,6 +35,10 @@ class Error(models.Model):
     decision = models.CharField(max_length=30, choices=DECISION, default='no', verbose_name="Сложность решения")
     photo = models.ImageField(null=True ,upload_to='errors/%Y-%m-%d/', verbose_name="Фото ошибки")
     category = models.ForeignKey(Category , on_delete=models.CASCADE, verbose_name="Категория")
+
+    class Meta:
+        verbose_name = 'Записи ошибок'
+        verbose_name_plural = 'Записи ошибок'    
 
     def __str__(self):
         return self.name

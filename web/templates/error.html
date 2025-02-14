@@ -3,6 +3,7 @@
 {% load filter %}
 {% block content %}
 
+<div class="bg-dark rounded p-5">
 <h1>{{ errors.name }}</h1>
 <div class="row border-bottom pb-4">
     <div class="col-md-12 col-sm-12 col-lg-8 col-xl-8">
@@ -63,10 +64,11 @@
 
     <div class="comments">
 
-      <div class="card bg-dark">
+      <div class="card bg-secondary">
         <div class="card-body">
           <h5 class="card-title">Андрюша Прокофьев</h5>
           <p class="card-text">Я за гойду!!</p>
+          <a class=" text-light" href="#">Ответить</a>
         </div>
       </div>
 
@@ -74,6 +76,6 @@
 
   </div>
 
+  </div>
 </div>
-
 {% endblock %}

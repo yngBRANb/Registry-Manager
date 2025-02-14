@@ -3,4 +3,4 @@ django-cms
 pillow
 whitenoise
 markdown
-python-telegram-bot
+requests

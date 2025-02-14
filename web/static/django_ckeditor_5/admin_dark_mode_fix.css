@@ -1,0 +1,10 @@
+.ck.ck-editor {  
+    color: white !important;  
+}
+.ck.ck-editor__main > .ck-editor__editable {
+    background: black;
+    border-radius: 0;
+}
+.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+    border-color: grey;
+  }

@@ -12,6 +12,7 @@ urlpatterns = [
     path('errorpage/<int:id>', errorPage, name='errorPage'),
     path('search/', search, name="search"),
     path('category/<int:id>', category_page, name='category'),
+    path("ckeditor5/", include('django_ckeditor_5.urls'), name="ck_editor_5_upload_file"),
 ]
 
 

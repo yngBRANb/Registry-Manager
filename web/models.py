@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django_ckeditor_5.fields import CKEditor5Field
+
 
 CLASSIFICATION = (
     ('Red', 'Красная'),
@@ -27,8 +29,8 @@ class Category(models.Model):
 
 class Error(models.Model):
     name = models.CharField(verbose_name="Название ошибки", max_length=50,)
-    description = models.TextField(verbose_name="Описание ошибки")
-    solving = models.TextField(verbose_name="Решение ошибки")
+    description = CKEditor5Field(verbose_name="Описание ошибки")
+    solving = CKEditor5Field(verbose_name="Решение ошибки")
     created_date = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=CLASSIFICATION, default='no', verbose_name="Статус ошибки")

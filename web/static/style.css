@@ -3,6 +3,51 @@
   background-color: #1e1e1e!important;
 }
 
+/* IMAGE */
+img{
+  max-width: 100%;
+  min-width: 100%;
+  width: 100%;
+}
+pre{
+  background-color: #1e1e1e;
+  padding: 16px;
+  border-radius: 4px;
+}
+
+code{
+  color: white!important;
+}
+
+table{
+  background-color: #1e1e1e;
+  color: white;
+  padding: 16px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border: 1px solid #000;
+}
+
+tbody{
+  border-radius: 8px;
+}
+
+tr{
+  border: solid grey 1px;
+  padding: 16px;
+}
+
+td{
+  border: solid grey 1px;
+  padding: 16px;
+}
+
+td > ul > li{
+  list-style: none;
+}
+
 /* Бэкграунд цвета кастомные */
 .bg-black{
     background-color: black;

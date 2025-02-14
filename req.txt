@@ -4,3 +4,4 @@ pillow
 whitenoise
 markdown
 requests
+django-ckeditor-5

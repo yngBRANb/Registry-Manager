@@ -12,8 +12,6 @@ deploy-job:
   stage: deploy
   script:
     - docker-compose up -d
-    - docker exec -it registry-web-1 python3 manage.py makemigrations
-    - docker exec -it registry-web-1 python3 manage.py migrate
     - apk add curl
     - sh ci-notify.sh ✅
 

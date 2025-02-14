@@ -8,3 +8,4 @@ services:
         volumes:
             - /home/registry/media/:/app/media/
             - /home/registry/db/db.sqlite3:/app/db.sqlite3
+        command: python manage.py makemigrations && python manage.py migrate

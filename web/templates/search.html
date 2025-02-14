@@ -21,7 +21,7 @@
             <p class="">{{ error.description|markdown|slice:":100" }}</p>
         </div>
         <div class="d-flex flex-column card-footer">
-            <a href="{% url 'error' error.id %}" class="btn btn-outline-primary">Подробнее</a>
+            <a href="{% url 'errorPage' error.id %}" class="btn btn-outline-primary">Подробнее</a>
             <small class="text-secondary ml-3">Обнаружена:{{ error.created_date }}</small>
         </div>
     </div>

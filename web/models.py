@@ -42,3 +42,13 @@ class Error(models.Model):
 
     def __str__(self):
         return self.name
+
+class TelegramUser(models.Model):
+    chat_id = models.CharField(max_length=20, unique=True, verbose_name="Chat ID")
+    
+    class Meta:
+        verbose_name = "Пользователь Telegram"
+        verbose_name_plural = "Пользователи Telegram"
+    
+    def __str__(self):
+        return self.chat_id

@@ -154,3 +154,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Telegram bot settings
+TELEGRAM_BOT_TOKEN = '7602750998:AAE-6L6T5KyWkTa3kYXQLZhxWS4jHRVDfJo'
+TELEGRAM_CHAT_IDS_FILE = BASE_DIR / 'telegram_chat_ids.txt'  # Файл для хранения ID чатов

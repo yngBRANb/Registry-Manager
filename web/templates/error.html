@@ -15,7 +15,7 @@
     <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
         <h2>ID: {{ errors.id }}</h2>
         <small class="text-secondary">Описание  ошибки:</small>
-        <p class="w-100">{{ errors.description|safe}}</p>
+        <p class="w-100">{{ errors.description|safe|markdown}}</p>
     </div>
 
 </div>
@@ -55,7 +55,7 @@
 
 <div class="row border-bottom pb-3">
     <div class="col-12">
-        <p>{{ errors.solving|safe }}</p>
+        <p>{{ errors.solving|safe| }}</p>
     </div>
 </div>
 

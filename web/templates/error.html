@@ -12,13 +12,13 @@
 
         <div class="d-flex align-items-center">
           {% if errors.status == 'Red' %}
-            <p class="m-4 bg-danger w-50 p-2 text-center rounded">Классификация ошибки: Красная</p>
+            <p class="m-4 bg-danger w-50 p-2 text-center rounded">Классификация: Красная</p>
           {% elif errors.status == 'Green' %}
-            <p class="m-4 bg-success w-50 p-2 text-center rounded">Классификация ошибки: Зеленая</p>
+            <p class="m-4 bg-success w-50 p-2 text-center rounded">Классификация: Зеленая</p>
           {% elif errors.status == 'Yellow' %}
-          <p class="m-4 bg-warning w-50 p-2 text-center text-dark rounded">Классификация ошибки: Желтая</p>
+          <p class="m-4 bg-warning w-50 p-2 text-center text-dark rounded">Классификация: Желтая</p>
           {% else %}
-          <p class="m-4 bg-secondary w-50 p-2 text-center rounded">Классификация ошибки: Не определенна</p>
+          <p class="m-4 bg-secondary w-50 p-2 text-center rounded">Классификация: Не определенна</p>
           {% endif %}
 
           {% if errors.decision == 'Red' %}

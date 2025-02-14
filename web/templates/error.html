@@ -10,28 +10,6 @@
 
         <img class="w-100 rounded border" src="{{ errors.photo.url }}" width="700" height="400" alt="">
 
-        <div class="d-flex align-items-center">
-          {% if errors.status == 'Red' %}
-            <p class="m-4 bg-danger w-50 p-2 text-center rounded">Классификация: Красная</p>
-          {% elif errors.status == 'Green' %}
-            <p class="m-4 bg-success w-50 p-2 text-center rounded">Классификация: Зеленая</p>
-          {% elif errors.status == 'Yellow' %}
-          <p class="m-4 bg-warning w-50 p-2 text-center text-dark rounded">Классификация: Желтая</p>
-          {% else %}
-          <p class="m-4 bg-secondary w-50 p-2 text-center rounded">Классификация: Не определенна</p>
-          {% endif %}
-
-          {% if errors.decision == 'Red' %}
-            <p class="m-4 bg-danger w-50 p-2 text-center rounded">Сложность: Тяжело</p>
-          {% elif errors.decision == 'Green' %}
-            <p class="m-4 bg-success w-50 p-2 text-center rounded">Сложность: Легко</p>
-          {% elif errors.decision == 'Yellow' %}
-            <p class="m-4 bg-warning w-50 p-2 text-center text-dark rounded">Сложность: Среднее</p>
-          {% else %}
-            <p class="m-4 bg-secondary w-50 p-2 text-center rounded">Сложность: Не определенна</p>
-          {% endif %}
-
-        </div>
     </div>
 
     <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
@@ -40,6 +18,37 @@
         <p class="w-100">{{ errors.description|markdown|truncatewords_html:30|slice:":800" }}</p>
     </div>
 
+</div>
+
+<div class="row">
+  <div class="col-12 d-md-flex d-lg-flex d-xl-flex">
+
+    <div class="">
+      {% if errors.status == 'Red' %}
+        <p class="m-4 bg-danger p-2 text-center rounded">Классификация: Красная</p>
+      {% elif errors.status == 'Green' %}
+        <p class="m-4 bg-success p-2 text-center rounded">Классификация: Зеленая</p>
+      {% elif errors.status == 'Yellow' %}
+      <p class="m-4 bg-warning p-2 text-center text-dark rounded">Классификация: Желтая</p>
+      {% else %}
+      <p class="m-4 bg-secondary p-2 text-center rounded">Классификация: Не определенна</p>
+      {% endif %}
+    </div>
+
+    <div>
+      {% if errors.decision == 'Red' %}
+        <p class="m-4 bg-danger p-2 text-center rounded">Сложность: Тяжело</p>
+      {% elif errors.decision == 'Green' %}
+        <p class="m-4 bg-success p-2 text-center rounded">Сложность: Легко</p>
+      {% elif errors.decision == 'Yellow' %}
+        <p class="m-4 bg-warning p-2 text-center text-dark rounded">Сложность: Среднее</p>
+      {% else %}
+        <p class="m-4 bg-secondary p-2 text-center rounded">Сложность: Не определенна</p>
+      {% endif %}
+
+    </div>
+
+  </div>
 </div>
 
 <h1 class="mt-3 mb-3">Решение проблемы:</h1>

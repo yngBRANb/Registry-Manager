@@ -28,7 +28,7 @@
 
    ```bash
 
-   git clone https://github.com/ваш_логин/реестр-менеджер.git
+   git clone https://github.com/yngBRANb/Registry-Manager.git
    pip install -r req.txt
    python manage.py migrate
    python manage.py runserver
@@ -37,7 +37,7 @@
 
    ```bash
 
-   git clone https://github.com/ваш_логин/реестр-менеджер.git
+   git clone https://github.com/yngBRANb/Registry-Manager.git
    docker build -t register-manager .
    docker run -p 80:8000 -d register-manager
 

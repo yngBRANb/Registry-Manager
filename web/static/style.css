@@ -19,6 +19,11 @@ code{
   color: white!important;
 }
 
+.img-fluid{
+  max-width:10% !important;
+  height: auto !important;
+}
+
 table{
   background-color: #1e1e1e;
   color: white;
